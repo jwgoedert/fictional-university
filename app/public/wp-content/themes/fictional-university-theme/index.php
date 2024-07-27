@@ -3,6 +3,11 @@
 <?php 
     $names = array('Tom', 'Mike', 'John', 'Jane');
     $descriptions = array('sunny', 'rainy', 'cloudy', 'windy');
+    $count = 0;
+
+    while($count < 4) {
+        echo "<p>Hi, My name is $names[$count] and I am a $descriptions[$count] student.</p>";
+        $count++;
     
+    }
 ?>
-<p>Hi, My name is <?php echo $names[0]; ?> and I am a <?php echo $descriptions[0] ?> student.</p>
