@@ -8,6 +8,5 @@
     while($count < 4) {
         echo "<p>Hi, My name is $names[$count] and I am a $descriptions[$count] student.</p>";
         $count++;
-    
     }
 ?>
