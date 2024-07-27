@@ -1,6 +1,10 @@
 <?php 
-    function myFirstFunction() {
-        echo "<p> Hello my name is James and I like all things curious. </p>";
+    function greet($name, $description) {
+        echo "<p>Hello, $name. How is your $description day going?</p>";
     }
-    myFirstFunction();
+    
+    greet('Tom', 'sunny');
+    greet('Mike', 'rainy');
+    greet('John', 'cloudy');
+    greet('Jane', 'windy');
 ?>
