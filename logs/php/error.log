@@ -1,0 +1,8 @@
+[27-Jul-2024 00:51:57 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string + string in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/index.php:8
+Stack trace:
+#0 /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-includes/template-loader.php(106): include()
+#1 /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-blog-header.php(19): require_once('/Users/jameswes...')
+#2 /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/index.php(17): require('/Users/jameswes...')
+#3 {main}
+  thrown in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/index.php on line 8
+[27-Jul-2024 00:54:40 UTC] PHP Parse error:  syntax error, unexpected token "-", expecting "]" in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/index.php on line 9
