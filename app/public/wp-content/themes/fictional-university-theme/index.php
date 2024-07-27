@@ -1,13 +1,8 @@
-<?php 
-    function greet($name, $description) {
-        echo "<p>Hello, $name. How is your $description day going?</p>";
-    }
-    
-    greet('Tom', 'sunny');
-    greet('Mike', 'rainy');
-    greet('John', 'cloudy');
-    greet('Jane', 'windy');
-?>
 <h1><?php bloginfo('name'); ?></h1>
-
 <p><?php bloginfo('description'); ?></p>
+<?php 
+    $names = array('Tom', 'Mike', 'John', 'Jane');
+    $descriptions = array('sunny', 'rainy', 'cloudy', 'windy');
+    
+?>
+<p>Hi, My name is <?php echo $names[0]; ?> and I am a <?php echo $descriptions[0] ?> student.</p>
