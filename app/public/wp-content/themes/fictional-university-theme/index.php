@@ -1,12 +1,11 @@
-<h1><?php bloginfo('name'); ?></h1>
-<p><?php bloginfo('description'); ?></p>
-<?php 
-    $names = array('Tom', 'Mike', 'John', 'Jane');
-    $descriptions = array('sunny', 'rainy', 'cloudy', 'windy');
-    $count = 0;
+<?php get_header(); 
 
-    while($count < 4) {
-        echo "<p>Hi, My name is $names[$count] and I am a $descriptions[$count] student.</p>";
-        $count++;
-    }
+    while(have_posts()) {
+        the_post(); ?>
+        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <?php the_content(); ?>
+        <hr>
+    <?php }
+
+    get_footer();
 ?>
