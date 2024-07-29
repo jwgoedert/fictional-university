@@ -3,3 +3,10 @@
     Author: T_Squared Studios
     Version: 1.0
 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    color:blueviolet;
+    margin: 0;
+    padding: 0;
+}

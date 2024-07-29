@@ -1,1 +1,10 @@
-<h1>This is the Header.php file!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <?php wp_head(); ?>
+</head>
+<body>
+    <h1>Fictional University</h1>
+    
+</body>
+</html>
