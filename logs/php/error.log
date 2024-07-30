@@ -6,3 +6,6 @@ Stack trace:
 #3 {main}
   thrown in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/index.php on line 8
 [27-Jul-2024 00:54:40 UTC] PHP Parse error:  syntax error, unexpected token "-", expecting "]" in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/index.php on line 9
+[30-Jul-2024 23:39:19 UTC] PHP Warning:  Attempt to read property "title" on null in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-includes/class-wp-customize-widgets.php on line 905
+[30-Jul-2024 23:40:42 UTC] PHP Warning:  Attempt to read property "title" on null in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-includes/class-wp-customize-widgets.php on line 905
+[30-Jul-2024 23:41:02 UTC] PHP Warning:  Attempt to read property "title" on null in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-includes/class-wp-customize-widgets.php on line 905
