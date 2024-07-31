@@ -2,7 +2,7 @@
 
 function university_post_types () {
     register_post_type('event', array(
-        'rewrite' => array('slug' => 'events'),
+        // 'rewrite' => array('slug' => 'events'),
         'public' => true,
         'show_in_rest' => true,
         'labels' => array(
