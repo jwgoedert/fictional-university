@@ -15,12 +15,12 @@
     <div class="full-width-split__inner">
       <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
       <?php
-      $homepage_events = new WP_Query(array(
+      $home_page_events = new WP_Query(array(
         'posts_per_page' => 2,
         'post_type' => 'event'
       ));
-      while ($homepage_events->have_posts()) {
-        $homepage_events->the_post(); ?>
+      while ($home_page_events->have_posts()) {
+        $home_page_events->the_post(); ?>
         <div class="event-summary">
           <a class="event-summary__date t-center" href="<?php the_permalink();?>">
             <span class="event-summary__month">Mar</span>
@@ -34,7 +34,7 @@
       <?php
       }
       ?>
-      <p class="t-center no-margin"><a href="<?php site_url('/events');?>" class="btn btn--blue">View All Events</a></p>
+      <p class="t-center no-margin"><a href="#" class="btn btn--blue">View All Events</a></p>
     </div>
   </div>
   <div class="full-width-split__two">
