@@ -45,11 +45,9 @@
             <?php 
             $home_page_posts = new WP_Query(array(
               'posts_per_page' => 2,
-              'category_name' => 'tests'
             ));
             while($home_page_posts->have_posts()) {
               $home_page_posts->the_post(); ?>
-              <li> <?php the_title(); ?> </li>
           <div class="event-summary">
             <a class="event-summary__date event-summary__date--beige t-center" href="<?php the_permalink()?>">
               <span class="event-summary__month"><?php the_time('M')?></span>
@@ -64,7 +62,7 @@
             } 
             ?>
 
-          <p class="t-center no-margin"><a href="#" class="btn btn--yellow">View All Blog Posts</a></p>
+          <p class="t-center no-margin"><a href="<?php echo site_url('/blog')?>" class="btn btn--yellow">View All Blog Posts</a></p>
         </div>
       </div>
     </div>
