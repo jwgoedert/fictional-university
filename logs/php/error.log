@@ -27,3 +27,11 @@ Stack trace:
 #2 /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/index.php(17): require('/Users/jameswes...')
 #3 {main}
   thrown in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/front-page.php on line 27
+[02-Aug-2024 23:55:22 UTC] PHP Fatal error:  Uncaught Exception: Failed to parse time string ('20261127') at position 0 ('): Unexpected character in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/front-page.php:41
+Stack trace:
+#0 /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/front-page.php(41): DateTime->__construct(''20261127'')
+#1 /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-includes/template-loader.php(106): include('/Users/jameswes...')
+#2 /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-blog-header.php(19): require_once('/Users/jameswes...')
+#3 /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/index.php(17): require('/Users/jameswes...')
+#4 {main}
+  thrown in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/front-page.php on line 41
