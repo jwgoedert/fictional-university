@@ -15,12 +15,23 @@
     <div class="full-width-split__inner">
       <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
       <?php
+      $today = date('Y-m-d H:i:s');
       $home_page_events = new WP_Query(array(
         'posts_per_page' => -1,
         'post_type' => 'event',
         'meta_key' => 'event_date',
-        'orderby' => 'meta_value_num',
+        'orderby' => 'meta_value',
+        // 'orderby' => 'meta_value_num',
         'order' => 'ASC',
+        // Only return events that are greater than or equal to today's date
+        'meta_query' => array(
+          array(
+            'key' => 'event_date',
+            'compare' => '>=',
+            'value' => $today,
+            'type' => 'datetime',
+          ),
+        ),
       ));
       while ($home_page_events->have_posts()) {
         $home_page_events->the_post(); ?>
@@ -28,6 +39,7 @@
           <a class="event-summary__date t-center" href="<?php the_permalink(); ?>">
             <span class="event-summary__month">
               <?php
+              // echo $today;
               $event_date = new DateTime(get_field('event_date'));
               echo $event_date->format('M') ?>
             </span>
@@ -39,6 +51,7 @@
           <div class="event-summary__content">
             <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h5>
             <p><?php
+                the_field('event_date');
                 if (has_excerpt()) {
                   echo get_the_excerpt();
                 } else {
