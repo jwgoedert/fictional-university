@@ -20,8 +20,6 @@
         'posts_per_page' => -1,
         'post_type' => 'event',
         'meta_key' => 'event_date',
-        //Originally had 'orderby' => 'meta_value_num', but it was not working
-        // 'orderby' => 'meta_value_num',
         'orderby' => 'meta_value',
         'order' => 'ASC',
         // Only return events that are greater than or equal to today's date
@@ -30,7 +28,7 @@
             'key' => 'event_date',
             'compare' => '>=',
             'value' => $today,
-            'type' => 'datetime',
+            'type' => 'DATETIME',
           ),
         ),
       ));
