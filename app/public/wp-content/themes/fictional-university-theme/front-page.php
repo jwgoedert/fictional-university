@@ -17,6 +17,7 @@
       <?php
       $today = date('Y-m-d H:i:s');
       $home_page_events = new WP_Query(array(
+        // Posts per page -1 means all posts
         'posts_per_page' => -1,
         'post_type' => 'event',
         'meta_key' => 'event_date',
