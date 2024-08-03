@@ -38,7 +38,6 @@
           <a class="event-summary__date t-center" href="<?php the_permalink(); ?>">
             <span class="event-summary__month">
               <?php
-              // echo $today;
               $event_date = new DateTime(get_field('event_date'));
               echo $event_date->format('M') ?>
             </span>
