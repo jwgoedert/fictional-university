@@ -13,7 +13,7 @@ while (have_posts()) {
 
   <div class="container container--narrow page-section">
     <div class="generic-content">
-      <?php the_content(); ?>
+      <?php the_post_thumbnail(); the_content(); ?>
     </div>
     <?php
     $related_programs = get_field('related_programs');
