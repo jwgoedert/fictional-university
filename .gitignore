@@ -1,3 +1,7 @@
 #ignore logs
 ./logs/*
 logs/*
+#ignore node modules
+./node_modules/*
+./app/public/wp-content/themes/fictional-university-theme/node_modules/*
+./app/public/wp-content/themes/fictional-university-theme/build/*
