@@ -5,8 +5,11 @@ function page_banner($args = NULL)
   if(!isset($args['title'])){
     $args['title'] = get_the_title();
   }
-  if(!isset($args['subtitle'])){
+  if(!isset($args['subtitle']) AND get_field('page_banner_subtitle')){
     $args['subtitle'] = get_field('page_banner_subtitle');
+  } else {
+    // Condition for pages without subtitle info
+    $args['subtitle'] = 'Things about ' . get_the_title();
   }
   if(!isset($args['photo'])){
     if(get_field('page_banner_background_image') AND !is_archive() AND !is_home()){
