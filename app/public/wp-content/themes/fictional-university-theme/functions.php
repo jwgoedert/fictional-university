@@ -18,16 +18,9 @@ function page_banner($args = NULL)
   ?>
    <div class="page-banner">
     <div class="page-banner__bg-image" style="background-image: url(<?php 
-    // $page_banner_image = get_field('page_banner_background_image');
-    // echo $page_banner_image['sizes']['pageBanner']; 
     echo $args['photo'];
     ?>)"></div>
     <div class="page-banner__content container container--narrow">
-      <!-- <h1 class="page-banner__title">
-        <?php 
-        // the_title(); 
-        ?>
-      </h1> -->
       <h1 class="page-banner__title"><?php echo $args['title']; ?></h1>
       <div class="page-banner__intro">
         <p><?php echo $args['subtitle'];?></p>
