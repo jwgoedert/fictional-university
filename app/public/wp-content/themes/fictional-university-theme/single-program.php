@@ -22,32 +22,58 @@ while (have_posts()) {
     </div>
     <!-- Display next two upcoming events related to program -->
     <?php
-      $today = date('Y-m-d H:i:s');
-      $home_page_events = new WP_Query(array(
-        'posts_per_page' => 2,
-        'post_type' => 'event',
-        'meta_key' => 'event_date',
-        'orderby' => 'meta_value',
-        'order' => 'ASC',
-        // Only return events that are greater than or equal to today's date
-        'meta_query' => array(
-          array(
-            'key' => 'event_date',
-            'compare' => '>=',
-            'value' => $today,
-            'type' => 'DATETIME',
-          ),
-          // Only return events that are related to the current program
-          array(
-            'key' => 'related_programs',
-            'compare' => 'LIKE',
-            'value' => '"' . get_the_ID() . '"'
-          )
-        ),
-      ));
 
-      if($home_page_events->have_posts()){
-        echo '<hr class="section-break">';
+    $related_professors = new WP_Query(array(
+      'posts_per_page' => -1,
+      'post_type' => 'professor',
+      'orderby' => 'title',
+      'order' => 'ASC',
+      'meta_query' => array(
+        array(
+          'key' => 'related_programs',
+          'compare' => 'LIKE',
+          'value' => '"' . get_the_ID() . '"'
+        )
+      ),
+    ));
+
+    if ($related_professors->have_posts()) {
+      echo '<hr class="section-break">';
+      echo '<h2 class="headline headline--medium ">' . get_the_title() . ' Professors</h2>';
+      while ($related_professors->have_posts()) {
+        $related_professors->the_post(); ?>
+        <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+      <?php
+      }
+    }
+    wp_reset_postdata();
+
+    $today = date('Y-m-d H:i:s');
+    $home_page_events = new WP_Query(array(
+      'posts_per_page' => 2,
+      'post_type' => 'event',
+      'meta_key' => 'event_date',
+      'orderby' => 'meta_value',
+      'order' => 'ASC',
+      // Only return events that are greater than or equal to today's date
+      'meta_query' => array(
+        array(
+          'key' => 'event_date',
+          'compare' => '>=',
+          'value' => $today,
+          'type' => 'DATETIME',
+        ),
+        // Only return events that are related to the current program
+        array(
+          'key' => 'related_programs',
+          'compare' => 'LIKE',
+          'value' => '"' . get_the_ID() . '"'
+        )
+      ),
+    ));
+
+    if ($home_page_events->have_posts()) {
+      echo '<hr class="section-break">';
       echo '<h2 class="headline headline--medium ">Upcoming ' . get_the_title() . ' Events</h2>';
       while ($home_page_events->have_posts()) {
         $home_page_events->the_post(); ?>
@@ -75,12 +101,11 @@ while (have_posts()) {
                 ?><a href="<?php the_permalink(); ?>" class="nu gray">Learn more</a></p>
           </div>
         </div>
-      <?php
+    <?php
       }
-
-      }
-      ?>
+    }
+    ?>
   </div>
-  <?php }
+<?php }
 get_footer();
-  ?>
+?>

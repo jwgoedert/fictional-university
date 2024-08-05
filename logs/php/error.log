@@ -46,3 +46,35 @@ Stack trace:
 [05-Aug-2024 12:22:54 UTC] PHP Warning:  Array to string conversion in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/single-event.php on line 26
 [05-Aug-2024 12:26:39 UTC] PHP Parse error:  Unclosed '{' on line 2 in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/single-event.php on line 44
 [05-Aug-2024 13:35:34 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/single-event.php on line 28
+[05-Aug-2024 17:32:17 UTC] PHP Warning:  Undefined variable $today in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/single-program.php on line 65
+[05-Aug-2024 17:32:17 UTC] WordPress database error Incorrect DATETIME value: '' for query SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID
+					 FROM wp_posts  INNER JOIN wp_postmeta ON ( wp_posts.ID = wp_postmeta.post_id )  INNER JOIN wp_postmeta AS mt1 ON ( wp_posts.ID = mt1.post_id )  INNER JOIN wp_postmeta AS mt2 ON ( wp_posts.ID = mt2.post_id )
+					 WHERE 1=1  AND ( 
+  wp_postmeta.meta_key = 'event_date' 
+  AND 
+  ( 
+    ( mt1.meta_key = 'event_date' AND CAST(mt1.meta_value AS DATETIME) >= '' ) 
+    AND 
+    ( mt2.meta_key = 'related_programs' AND mt2.meta_value LIKE '%\"76\"%' )
+  )
+) AND ((wp_posts.post_type = 'event' AND (wp_posts.post_status = 'publish' OR wp_posts.post_status = 'acf-disabled' 
+OR wp_posts.post_status = 'private')))
+					 GROUP BY wp_posts.ID
+					 ORDER BY wp_postmeta.meta_value ASC
+					 LIMIT 0, 2 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/fictional-university-theme/single-program.php'), WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[05-Aug-2024 17:33:13 UTC] PHP Warning:  Undefined variable $today in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/themes/fictional-university-theme/single-program.php on line 65
+[05-Aug-2024 17:33:13 UTC] WordPress database error Incorrect DATETIME value: '' for query SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID
+					 FROM wp_posts  INNER JOIN wp_postmeta ON ( wp_posts.ID = wp_postmeta.post_id )  INNER JOIN wp_postmeta AS mt1 ON ( wp_posts.ID = mt1.post_id )  INNER JOIN wp_postmeta AS mt2 ON ( wp_posts.ID = mt2.post_id )
+					 WHERE 1=1  AND ( 
+  wp_postmeta.meta_key = 'event_date' 
+  AND 
+  ( 
+    ( mt1.meta_key = 'event_date' AND CAST(mt1.meta_value AS DATETIME) >= '' ) 
+    AND 
+    ( mt2.meta_key = 'related_programs' AND mt2.meta_value LIKE '%\"76\"%' )
+  )
+) AND ((wp_posts.post_type = 'event' AND (wp_posts.post_status = 'publish' OR wp_posts.post_status = 'acf-disabled' 
+OR wp_posts.post_status = 'private')))
+					 GROUP BY wp_posts.ID
+					 ORDER BY wp_postmeta.meta_value ASC
+					 LIMIT 0, 2 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/fictional-university-theme/single-program.php'), WP_Query->__construct, WP_Query->query, WP_Query->get_posts
