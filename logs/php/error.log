@@ -78,3 +78,8 @@ OR wp_posts.post_status = 'private')))
 					 GROUP BY wp_posts.ID
 					 ORDER BY wp_postmeta.meta_value ASC
 					 LIMIT 0, 2 made by require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), include('/themes/fictional-university-theme/single-program.php'), WP_Query->__construct, WP_Query->query, WP_Query->get_posts
+[05-Aug-2024 20:44:53 UTC] PHP Warning:  Undefined array key "size" in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/plugins/manual-image-crop/lib/ManualImageCropEditorWindow.php on line 39
+[05-Aug-2024 20:46:45 UTC] PHP Warning:  Undefined array key "size" in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/plugins/manual-image-crop/lib/ManualImageCropEditorWindow.php on line 39
+[05-Aug-2024 20:48:13 UTC] PHP Warning:  Undefined array key "size" in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/plugins/manual-image-crop/lib/ManualImageCropEditorWindow.php on line 39
+[05-Aug-2024 20:49:15 UTC] PHP Warning:  Undefined array key "size" in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/plugins/manual-image-crop/lib/ManualImageCropEditorWindow.php on line 39
+[05-Aug-2024 20:59:22 UTC] PHP Warning:  Undefined array key "size" in /Users/jameswesleygoedert/Local Sites/fictional-university/app/public/wp-content/plugins/manual-image-crop/lib/ManualImageCropEditorWindow.php on line 39
