@@ -3,9 +3,9 @@ while (have_posts()) {
   the_post();
   // Example with hardcoded title, subtitle, and image 
   page_banner(array(
-    'title' => 'Hello, this is the Title!',
-    'subtitle' => 'Hello, this is the subtitle!',
-    'photo' => 'https://images.unsplash.com/photo-1518680371558-107eece618ec?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    // 'title' => 'Hello, this is the Title!',
+    // 'subtitle' => 'Hello, this is the subtitle!',
+    // 'photo' => 'https://images.unsplash.com/photo-1518680371558-107eece618ec?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   ));
   ?>
 
