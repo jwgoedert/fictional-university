@@ -1,26 +1,29 @@
+import $ from 'jquery';
+
 class Search {
   // 1. Describe and create/initiate our object
   constructor() {
-    this.name = 'James';
-    this.age = 38;
-    this.head = {};
-    this.brain = {};
+    // this.openButton = document.querySelector('.js-search-trigger');
+    this.openButton = $('.js-search-trigger');
+    this.closeButton = $('.search-overlay__close');
+    this.searchOverlay = $('.search-overlay');
+    this.events();
   }
   // 2. Add events
-   //on this.head feels cold, wearsHat
-   //on this.head feels warm, takesHatOff
 
-  
+  events() {
+    this.openButton.on('click', this.openOverlay.bind(this));
+    this.closeButton.on('click', this.closeOverlay.bind(this));
+  }
+
   // 3. Methods
 
-  //wearHat()..
-  //takeHatOff()..
   openOverlay() {
-    alert('Search overlay opened');
+    this.searchOverlay.addClass('search-overlay--active');
   }
 
   closeOverlay() {
-    alert('Search overlay closed');
+    this.searchOverlay.removeClass('search-overlay--active');
   } 
 }
 
