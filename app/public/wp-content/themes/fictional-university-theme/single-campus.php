@@ -56,34 +56,33 @@ while (have_posts()) {
     wp_reset_postdata();
 
     $today = date('Y-m-d H:i:s');
-    $home_page_events = new WP_Query(array(
-      'posts_per_page' => 2,
+    $campus_events = new WP_Query(array(
+      'posts_per_page' => -1,
       'post_type' => 'event',
-      'meta_key' => 'event_date',
+      'meta_key' => 'event_location',
       'orderby' => 'meta_value',
       'order' => 'ASC',
       // Only return events that are greater than or equal to today's date
       'meta_query' => array(
-        array(
-          'key' => 'event_date',
-          'compare' => '>=',
-          'value' => $today,
-          'type' => 'DATETIME',
-        ),
+        // array(
+        //   'key' => 'event_date',
+        //   'compare' => '>=',
+        //   'value' => $today,
+        //   'type' => 'DATETIME',
+        // ),
         // Only return events that are related to the current program
         array(
-          'key' => 'related_programs',
+          'key' => 'event_location',
           'compare' => 'LIKE',
           'value' => '"' . get_the_ID() . '"'
         )
       ),
     ));
-
-    if ($home_page_events->have_posts()) {
+    if ($campus_events->have_posts()) {
       echo '<hr class="section-break">';
       echo '<h2 class="headline headline--medium ">Upcoming ' . get_the_title() . ' Events</h2>';
-      while ($home_page_events->have_posts()) {
-        $home_page_events->the_post();
+      while ($campus_events->have_posts()) {
+        $campus_events->the_post();
         get_template_part('template-parts/content', 'event');
       }
     }
