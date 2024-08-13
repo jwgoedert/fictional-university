@@ -2,6 +2,8 @@
 wp-content/plugins/
 wp-content/themes/fictional-university-theme/node_modules
 wp-content/themes/fictional-university-theme/build
+wp-content/themes/fictional-university-theme/build*
+app/public/wp-content/themes/fictional-university-theme/build
 
 wp-content/themes/fictional-university-theme/node_modules/
 wp-content/themes/fictional-university-theme/build/
@@ -12,4 +14,4 @@ wp-content/themes/fictional-university-theme/build/*
 ./wp-content/themes/fictional-university-theme/node_modules/*
 ./wp-content/themes/fictional-university-theme/build/*
 
-
+app/public/wp-content/themes/fictional-university-theme/build
