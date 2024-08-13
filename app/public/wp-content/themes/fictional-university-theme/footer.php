@@ -68,7 +68,7 @@
     </div>
   </div>
 </footer>
-
+<div class="search-overlay search-overlay--active">hello</div>
 <?php wp_footer(); ?>
 </body>
 
