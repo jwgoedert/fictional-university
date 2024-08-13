@@ -59,17 +59,17 @@ while (have_posts()) {
     $campus_events = new WP_Query(array(
       'posts_per_page' => -1,
       'post_type' => 'event',
-      'meta_key' => 'event_location',
+      'meta_key' => 'event_date',
       'orderby' => 'meta_value',
       'order' => 'ASC',
       // Only return events that are greater than or equal to today's date
       'meta_query' => array(
-        // array(
-        //   'key' => 'event_date',
-        //   'compare' => '>=',
-        //   'value' => $today,
-        //   'type' => 'DATETIME',
-        // ),
+        array(
+          'key' => 'event_date',
+          'compare' => '>=',
+          'value' => $today,
+          'type' => 'DATETIME',
+        ),
         // Only return events that are related to the current program
         array(
           'key' => 'event_location',
