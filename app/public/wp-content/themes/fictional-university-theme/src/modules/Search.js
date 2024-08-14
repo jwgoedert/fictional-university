@@ -15,13 +15,17 @@ class Search {
   events() {
     this.openButton.on('click', this.openOverlay.bind(this));
     this.closeButton.on('click', this.closeOverlay.bind(this));
-
     // Use keys to open and close overlay
-    $(document).on('keyup', this.keyPressDispatcher.bind(this));
+    $(document).on('keydown', this.keyPressDispatcher.bind(this));
+    // this direct selection is slower than JS refactor
+    $("#search-term").on('keydown', this.typingLogic.bind(this));
   }
 
   // 3. Methods
-
+  
+  typingLogic() {
+    console.log('typing');
+  }
   openOverlay() {
     this.searchOverlay.addClass('search-overlay--active');
     $('body').addClass('body-no-scroll');
@@ -44,6 +48,7 @@ class Search {
       this.closeOverlay();
     }
   }
+
 }
 
 export default Search;
