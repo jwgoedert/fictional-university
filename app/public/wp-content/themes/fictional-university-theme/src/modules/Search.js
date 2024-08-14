@@ -7,6 +7,7 @@ class Search {
     this.openButton = $('.js-search-trigger');
     this.closeButton = $('.search-overlay__close');
     this.searchOverlay = $('.search-overlay');
+    this.isOverlayOpen = false;
     this.events();
   }
   // 2. Add events
@@ -24,16 +25,16 @@ class Search {
   openOverlay() {
     this.searchOverlay.addClass('search-overlay--active');
     $('body').addClass('body-no-scroll');
+    this.isOverlayOpen = true;
   }
 
   closeOverlay() {
     this.searchOverlay.removeClass('search-overlay--active');
     $('body').removeClass('body-no-scroll');
+    this.isOverlayOpen = false;
   } 
 
   keyPressDispatcher(e) {
-    console.log('key pressed');
-    console.log(e.keyCode);
     if (e.keyCode == 83 && !this.searchOverlay.hasClass('search-overlay--active')) {
       this.openOverlay();
     }
