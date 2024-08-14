@@ -4,11 +4,14 @@ class Search {
   // 1. Describe and create/initiate our object
   constructor() {
     // this.openButton = document.querySelector('.js-search-trigger');
+    this.resultsDiv = $('#search-overlay__results');
     this.openButton = $('.js-search-trigger');
     this.closeButton = $('.search-overlay__close');
     this.searchOverlay = $('.search-overlay');
-    this.isOverlayOpen = false;
+    this.searchField = $('#search-term');
     this.events();
+    this.isOverlayOpen = false;
+    this.typingTimer;
   }
   // 2. Add events
 
@@ -18,14 +21,23 @@ class Search {
     // Use keys to open and close overlay
     $(document).on('keydown', this.keyPressDispatcher.bind(this));
     // this direct selection is slower than JS refactor
-    $("#search-term").on('keydown', this.typingLogic.bind(this));
+    this.searchField.on('keydown', this.typingLogic.bind(this));
   }
 
   // 3. Methods
   
   typingLogic() {
-    console.log('typing');
+    clearTimeout(this.typingTimer);
+    this.resultsDiv.html('<div class="spinner-loader"></div>');
+    this.typingTimer = setTimeout(
+      this.getResults.bind(this)
+    , 2000); 
   }
+
+  getResults() {
+    this.resultsDiv.html('Hello there, i will get some results for you');
+  }
+
   openOverlay() {
     this.searchOverlay.addClass('search-overlay--active');
     $('body').addClass('body-no-scroll');
