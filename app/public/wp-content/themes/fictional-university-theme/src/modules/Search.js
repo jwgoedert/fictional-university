@@ -32,14 +32,15 @@ class Search {
     this.searchOverlay.removeClass('search-overlay--active');
     $('body').removeClass('body-no-scroll');
     this.isOverlayOpen = false;
-  } 
+  }
 
   keyPressDispatcher(e) {
-    if (e.keyCode == 83 && !this.searchOverlay.hasClass('search-overlay--active')) {
+    // s key
+    if (e.keyCode == 83 && !this.isOverlayOpen) {
       this.openOverlay();
     }
-
-    if (e.keyCode == 27 && this.searchOverlay.hasClass('search-overlay--active')) {
+    // esc key
+    if (e.keyCode == 27 && this.isOverlayOpen) {
       this.closeOverlay();
     }
   }
