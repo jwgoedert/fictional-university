@@ -14,6 +14,9 @@ class Search {
   events() {
     this.openButton.on('click', this.openOverlay.bind(this));
     this.closeButton.on('click', this.closeOverlay.bind(this));
+
+    // Use keys to open and close overlay
+    $(document).on('keyup', this.keyPressDispatcher.bind(this));
   }
 
   // 3. Methods
@@ -26,8 +29,19 @@ class Search {
   closeOverlay() {
     this.searchOverlay.removeClass('search-overlay--active');
     $('body').removeClass('body-no-scroll');
-
   } 
+
+  keyPressDispatcher(e) {
+    console.log('key pressed');
+    console.log(e.keyCode);
+    if (e.keyCode == 83 && !this.searchOverlay.hasClass('search-overlay--active')) {
+      this.openOverlay();
+    }
+
+    if (e.keyCode == 27 && this.searchOverlay.hasClass('search-overlay--active')) {
+      this.closeOverlay();
+    }
+  }
 }
 
 export default Search;
