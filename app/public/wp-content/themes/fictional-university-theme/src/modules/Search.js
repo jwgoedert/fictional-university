@@ -52,10 +52,11 @@ class Search {
   }
 
   getResults() {
-    this.resultsDiv.html('Hello there, i will get some results for you');
-    this.isSpinnerVisible = false;
+    $.getJSON('http://fictional-university.local/wp-json/wp/v2/posts?search=hello', function (posts) {
+      alert(posts[0].title.rendered);
   }
-
+    )
+  }
   openOverlay() {
     this.searchOverlay.addClass('search-overlay--active');
     $('body').addClass('body-no-scroll');
